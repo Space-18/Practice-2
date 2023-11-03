@@ -1,5 +1,6 @@
-using Biblioteca.API.Middlewares;
+using Biblioteca.Configuration.Middlewares;
 using Biblioteca.Configuration;
+using Biblioteca.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddConfigurationServices(builder.Configuration);
+builder.Services.AddPersistenceService(builder.Configuration);
+builder.Services.AddConfigurationServices();
 
 var app = builder.Build();
 

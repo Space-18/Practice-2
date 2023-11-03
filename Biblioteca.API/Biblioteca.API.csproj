@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Biblioteca.Configuration\Biblioteca.Configuration.csproj" />
+    <ProjectReference Include="..\Biblioteca.Persistence\Biblioteca.Persistence.csproj" />
+    <ProjectReference Include="..\Biblioteca.Services\Biblioteca.Services.csproj" />
   </ItemGroup>
 
 </Project>

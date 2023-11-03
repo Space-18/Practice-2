@@ -1,9 +1,12 @@
-﻿using Biblioteca.API.Errors;
-using Biblioteca.Application.Exceptions;
+﻿using Biblioteca.Application.Exceptions;
+using Biblioteca.Configuration.Errors;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System.Net;
 using System.Text.Json;
 
-namespace Biblioteca.API.Middlewares
+namespace Biblioteca.Configuration.Middlewares
 {
     public class ExceptionMiddleware
     {

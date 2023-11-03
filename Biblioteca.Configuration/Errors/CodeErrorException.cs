@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Biblioteca.API.Errors
+namespace Biblioteca.Configuration.Errors
 {
     public class CodeErrorException : CodeErrorResponse
     {

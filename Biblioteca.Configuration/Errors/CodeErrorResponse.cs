@@ -1,4 +1,4 @@
-﻿namespace Biblioteca.API.Errors
+﻿namespace Biblioteca.Configuration.Errors
 {
     public class CodeErrorResponse
     {
