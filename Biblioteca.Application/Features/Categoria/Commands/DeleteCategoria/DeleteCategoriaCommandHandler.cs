@@ -2,11 +2,6 @@
 using Biblioteca.Application.Exceptions;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Biblioteca.Application.Features.Categoria.Commands.DeleteCategoria
 {
@@ -38,7 +33,7 @@ namespace Biblioteca.Application.Features.Categoria.Commands.DeleteCategoria
 
             if (result == null)
             {
-                _logger.LogError($"Categoria {id} no modificada, no se encuentró el recurso");
+                _logger.LogError($"Categoria {id} no eliminada, no se encontró el recurso.");
                 throw new NotFoundException(typeof(Domain.Categoria).Name, id);
             }
             else

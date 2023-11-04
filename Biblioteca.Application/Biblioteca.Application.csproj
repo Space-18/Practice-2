@@ -12,9 +12,6 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Services\" />
-    <Folder Include="Features\Autor\" />
-    <Folder Include="Features\Editorial\" />
-    <Folder Include="Features\Libro\Commands\" />
   </ItemGroup>
 
   <ItemGroup>

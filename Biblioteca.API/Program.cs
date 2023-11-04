@@ -1,5 +1,5 @@
-using Biblioteca.Configuration.Middlewares;
 using Biblioteca.Configuration;
+using Biblioteca.Configuration.Middlewares;
 using Biblioteca.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -5,5 +5,7 @@ namespace Biblioteca.Application.Contracts.Persistence
 {
     public interface ILibroRepository : IBaseRepository<Libro>
     {
+        Task<Libro> GetLibroWithCategoriaWithAutorWithEditorial(string id);
+        Task<string> AddLibroWithCategoriaWithAutorWithEditorial(Libro libro);
     }
 }

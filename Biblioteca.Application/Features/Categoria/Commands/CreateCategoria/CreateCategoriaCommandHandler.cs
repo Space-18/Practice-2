@@ -3,12 +3,6 @@ using Biblioteca.Application.Contracts.Persistence;
 using Biblioteca.Application.Exceptions;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Biblioteca.Application.Features.Categoria.Commands.CreateCategoria
 {
@@ -18,7 +12,7 @@ namespace Biblioteca.Application.Features.Categoria.Commands.CreateCategoria
         private readonly IMapper _mapper;
         private readonly ILogger<CreateCategoriaCommandHandler> _logger;
 
-        public CreateCategoriaCommandHandler(IUnitOfWork unitOfWork, IMapper mapper,ILogger<CreateCategoriaCommandHandler> logger)
+        public CreateCategoriaCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, ILogger<CreateCategoriaCommandHandler> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -46,7 +40,7 @@ namespace Biblioteca.Application.Features.Categoria.Commands.CreateCategoria
             if (result != null)
             {
                 _logger.LogError($"Categoría `{nombre}` no creada, ya existe uno con el mismo nombre.");
-                throw new BadRequestException("El record no se pudo crear.");
+                throw new BadRequestException($"El record no se pudo crear: {typeof(Domain.Categoria).Name}");
             }
         }
     }

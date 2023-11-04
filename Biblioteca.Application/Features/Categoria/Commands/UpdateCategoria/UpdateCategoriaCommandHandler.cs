@@ -1,14 +1,8 @@
 ﻿using AutoMapper;
 using Biblioteca.Application.Contracts.Persistence;
 using Biblioteca.Application.Exceptions;
-using Biblioteca.Domain;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Biblioteca.Application.Features.Categoria.Commands.UpdateCategoria
 {
@@ -18,7 +12,7 @@ namespace Biblioteca.Application.Features.Categoria.Commands.UpdateCategoria
         private readonly IMapper _mapper;
         private readonly ILogger<UpdateCategoriaCommandHandler> _logger;
 
-        public UpdateCategoriaCommandHandler(IUnitOfWork unitOfWork, IMapper mapper,ILogger<UpdateCategoriaCommandHandler> logger)
+        public UpdateCategoriaCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, ILogger<UpdateCategoriaCommandHandler> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -43,9 +37,9 @@ namespace Biblioteca.Application.Features.Categoria.Commands.UpdateCategoria
         {
             var result = await _unitOfWork.CategoriaRepository.GetByIdAsync(id);
 
-            if(result == null)
+            if (result == null)
             {
-                _logger.LogError($"Categoria {id} no modificada, no se encuentró el recurso");
+                _logger.LogError($"Categoria {id} no modificada, no se encontró el recurso.");
                 throw new NotFoundException(typeof(Domain.Categoria).Name, id);
             }
             else

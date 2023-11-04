@@ -5,5 +5,6 @@ namespace Biblioteca.Application.Contracts.Persistence
 {
     public interface IAutorRepository : IBaseRepository<Autor>
     {
+        Task<Autor> GetAutorWithLibros(string id);
     }
 }

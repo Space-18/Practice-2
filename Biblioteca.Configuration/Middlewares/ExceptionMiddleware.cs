@@ -47,7 +47,7 @@ namespace Biblioteca.Configuration.Middlewares
                         result = JsonSerializer.Serialize(new CodeErrorException(statusCode, e.Message, validationErrors)); break;
 
 
-                        //result = JsonSerializer.Serialize(new CodeErrorException(statusCode, e.Message, validationJson)); break;
+                    //result = JsonSerializer.Serialize(new CodeErrorException(statusCode, e.Message, validationJson)); break;
                     case BadRequestException badRequestException:
                         statusCode = (int)HttpStatusCode.BadRequest; break;
                     default: break;

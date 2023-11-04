@@ -13,9 +13,14 @@ namespace Biblioteca.Application.Mappings
         public CategoriaAutomapperProfile()
         {
             CreateMap<Categoria, CategoriaViewModel>();
-            CreateMap<Categoria, CategoriaLibrosViewModel>().ForMember(x => x.Libros, y => y.MapFrom(MapLibrosToLibroViewModel));
-            CreateMap<CategoriaDTO, CreateCategoriaCommand>();
+
+            CreateMap<Categoria, CategoriaLibrosViewModel>()
+                .ForMember(x => x.Libros, y => y.MapFrom(MapLibrosToLibroViewModel));
+
+            CreateMap<CreateCategoriaDTO, CreateCategoriaCommand>();
+
             CreateMap<CreateCategoriaCommand, Categoria>();
+
             CreateMap<UpdateCategoriaCommand, Categoria>();
         }
 

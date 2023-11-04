@@ -1,6 +1,6 @@
 ﻿namespace Biblioteca.Application.Models.Response.Libro
 {
-    internal class LibrosViewModel
+    internal record LibrosViewModel
     {
         public string Id { get; set; }
         public string Nombre { get; set; }

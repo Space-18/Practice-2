@@ -32,24 +32,24 @@ namespace Biblioteca.Configuration.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<ActionResult> GetCategoriaById(string id)
         {
-            var query = new GetCategoriaByIdQuery(id);
+            var query = new GetCategoriaByIdQuery { Id = id };
             return Ok(await _mediator.Send(query));
         }
 
         [HttpPost(Name = "CreateCategoria")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult> CreateCategoria([FromBody]CategoriaDTO categoria)
+        public async Task<ActionResult> CreateCategoria([FromBody] CreateCategoriaDTO categoria)
         {
             var command = _mapper.Map<CreateCategoriaCommand>(categoria);
             var result = await _mediator.Send(command);
             return StatusCode(201, result);
         }
 
-        [HttpPut("{id}",Name = "UpdateCategoria")]
+        [HttpPut("{id}", Name = "UpdateCategoria")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult> UpdateCategoria(string id, [FromBody]CategoriaDTO categoria)
+        public async Task<ActionResult> UpdateCategoria(string id, [FromBody] CreateCategoriaDTO categoria)
         {
             var command = new UpdateCategoriaCommand { Id = id, Nombre = categoria.Nombre };
             var result = await _mediator.Send(command);

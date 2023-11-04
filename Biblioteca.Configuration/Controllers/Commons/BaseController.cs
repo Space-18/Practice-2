@@ -11,7 +11,7 @@ namespace Biblioteca.Configuration.Controllers.Commons
         protected readonly IMediator _mediator;
         protected readonly IMapper _mapper;
 
-        public BaseController(IMediator mediator,IMapper mapper)
+        public BaseController(IMediator mediator, IMapper mapper)
         {
             _mediator = mediator;
             _mapper = mapper;

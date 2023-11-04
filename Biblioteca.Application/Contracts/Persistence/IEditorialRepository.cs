@@ -5,5 +5,6 @@ namespace Biblioteca.Application.Contracts.Persistence
 {
     public interface IEditorialRepository : IBaseRepository<Editorial>
     {
+        Task<Editorial> GetEditorialWithLibros(string id);
     }
 }

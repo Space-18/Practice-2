@@ -2,7 +2,7 @@
 
 namespace Biblioteca.Application.Models.Response.Categoria
 {
-    internal class CategoriaLibrosViewModel
+    internal record CategoriaLibrosViewModel
     {
         public string Id { get; set; }
         public string Nombre { get; set; }

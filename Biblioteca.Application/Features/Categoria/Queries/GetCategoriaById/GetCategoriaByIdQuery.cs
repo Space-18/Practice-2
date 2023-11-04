@@ -6,10 +6,5 @@ namespace Biblioteca.Application.Features.Categoria.Queries.GetCategoriaById
     public record GetCategoriaByIdQuery : IRequest<CategoriaLibrosViewModel>
     {
         public string Id { get; set; }
-
-        public GetCategoriaByIdQuery(string id)
-        {
-            Id = id;
-        }
     }
 }

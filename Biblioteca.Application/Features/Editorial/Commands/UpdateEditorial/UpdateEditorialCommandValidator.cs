@@ -1,0 +1,30 @@
+﻿using FluentValidation;
+
+namespace Biblioteca.Application.Features.Editorial.Commands.UpdateEditorial
+{
+    internal class UpdateEditorialCommandValidator : AbstractValidator<UpdateEditorialCommand>
+    {
+        public UpdateEditorialCommandValidator()
+        {
+            RuleFor(x => x.Id)
+                .NotEmpty()
+                .WithMessage("El campo {Id} no debe ser vacio.")
+                .NotNull()
+                .WithMessage("El campo {Id} no debe ser nulo.");
+
+            RuleFor(x => x.Nombre)
+                .NotEmpty()
+                .WithMessage("El campo {Nombre} no debe ser vacio.")
+                .NotNull()
+                .WithMessage("El campo {Nombre} no debe ser nulo.")
+                .MinimumLength(1)
+                .WithMessage("El campo {Nombre} debe tener 1 caracter como mínimo.")
+                .MaximumLength(50)
+                .WithMessage("El campo {Nombre} debe tener 50 caracteres como máximo.");
+
+            RuleFor(x => x.SitioWeb)
+                .MinimumLength(3)
+                .WithMessage("EL campo {Sitio web} debe tener como mínimo 3 caracteres.");
+        }
+    }
+}

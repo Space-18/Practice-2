@@ -2,11 +2,6 @@
 using Biblioteca.Application.Contracts.Persistence;
 using Biblioteca.Application.Models.Response.Libro;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Biblioteca.Application.Features.Libro.Queries.GetLibros
 {
@@ -23,9 +18,9 @@ namespace Biblioteca.Application.Features.Libro.Queries.GetLibros
 
         public async Task<List<LibrosViewModel>> Handle(GetLibrosQuery request, CancellationToken cancellationToken)
         {
-            var libros = await _unitOfWork.LibroRepository.GetAllAsync();
-
-            return _mapper.Map<List<LibrosViewModel>>(libros);
+            var libroList = await _unitOfWork.LibroRepository.GetAllAsync();
+            libroList = libroList.OrderBy(x => x.Nombre).ToList();
+            return _mapper.Map<List<LibrosViewModel>>(libroList);
         }
     }
 }
