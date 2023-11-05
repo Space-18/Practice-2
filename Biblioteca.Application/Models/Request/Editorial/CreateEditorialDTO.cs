@@ -4,6 +4,6 @@
     {
         public string Nombre { get; set; }
         public string SitioWeb { get; set; }
-        public List<string> LibroId { get; set; }
+        public List<string>? LibroId { get; set; }
     }
 }

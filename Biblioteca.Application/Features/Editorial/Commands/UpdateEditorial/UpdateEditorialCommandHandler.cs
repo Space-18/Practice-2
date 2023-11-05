@@ -39,7 +39,7 @@ namespace Biblioteca.Application.Features.Editorial.Commands.UpdateEditorial
 
         private async Task<Domain.Editorial> ExistRecordInDatabase(string id)
         {
-            var result = await _unitOfWork.EditorialRepository.GetByIdAsync(id);
+            var result = await _unitOfWork.EditorialRepository.GetEditorialWithLibros(id);
 
             if (result == null)
             {
